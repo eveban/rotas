@@ -1,0 +1,115 @@
+/** Iniciando projeto NodeJS */
+
+create directory
+/*create Project */
+yarn ini -y
+
+/**Iniciar Express */
+yarn add express
+/** create directory  */
+src
+  app.js
+  routes.js
+  server.js
+
+ Botão direito
+ .editorConfig
+
+ /* Utilização do Import/Export */
+
+yarn add sucrase nodemon -D  /** Desenvolvimento */
+
+/* Nodemon - Monitor em tempo real para desenvolver */
+
+/* Criar um arquivo do nodemon na raiz:*/
+Conteúdo (nodemon.json)
+
+package.json criar script para nodemon
+{
+  "execMap":{
+    "js": "sucrase-node"
+  }
+}
+
+
+/* Configurando Eslit/Prettier e EditorConfig */
+
+1 - yarn add eslint
+2 - yarn eslint --init
+Iniciar parametros do Node
+
+ /* Excluir package-lock.json */
+ Rodar um yarn no projeto
+
+ Instalar plugin o ESLint no VSCode
+ executar um yarn novamente.
+
+ /* Editar .slitnrc.js*/
+ rules: {
+    //** */
+    "prettier/prettier": "error",
+    "class-methods-use-this": "off",
+    "no-param-reassing": "off",
+    "camelcase": "off",
+    /* variáveis não usadas */
+    "no-unused-vars": ["error", {"argsIgnorePattern": "next"}],
+
+  },
+
+/** Configuração do  prettier (Deixar código + bonito - identação mais organizada)*/
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+/** Editar .slitnrc.js */
+extends: ['airbnb-base', 'prettier'],
+plugins: ['prettier'],
+
+/** Criar arquivo .prettierrc na raiz do projeto*/
+
+{
+  "singleQuote": true,
+  "trailingComma": "es5"
+}
+
+/** Corrigir todos os arquivos ao mesmo tempo no eslint*/
+yarn eslint --fix src --ext .js
+
+Finalizar,
+
+ /* Criar o Editor Config (ferramenta externa) */
+
+indent_style = space
+end_of_line = lf
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+/* ----------------------------------------------------------------*/
+
+/**Iniciando com sequelize*/
+Criar diretórios e arquivos de configuração
+/src/app/models
+/src/app/controller
+/src/config/database.js
+/src/database/migrations
+
+/*Instalação do seuqelize*/
+yarn add sequelize
+
+/* Interface de linha de comando */
+yarn add sequelize-cli -D
+
+/* criar na raiz .sequelizerc */
+Tranformar ele sintaxe de javascript
+
+const { resolve } = require('path');
+/* Conteudo */
+module.exports = {
+  config: resolve(__dirname, 'src', 'config', 'database.js'),
+  'models-path': resolve(__dirname, 'src', 'app', 'models'),
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds'),
+};
+
+/*Dialect MSSQL*/
+yarn add tedious@^6.0.0
