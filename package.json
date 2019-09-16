@@ -6,10 +6,8 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "debug": "node --inspect-brk -r sucrase/register src/server.js",
-
     "build": "sucrase ./src -d ./dist --transforms imports",
     "start": "node dist/server.js"
-
   },
   "dependencies": {
     "babel-node": "^0.0.1-security",
