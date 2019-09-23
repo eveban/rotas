@@ -12,7 +12,7 @@ class App {
   }
 
   middlewares() {
-    this.server.use('*', cors(['rotas.herokuapp.com', 'localhost:3000']));
+    this.server.use(cors({ origin: 'http://192.168.1.14:3000' }));
     this.server.use(express.json());
   }
 
