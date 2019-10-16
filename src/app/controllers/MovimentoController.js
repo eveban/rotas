@@ -1,5 +1,6 @@
 import { Op } from 'sequelize';
 import ClienteFornecedor from '../models/ClienteFornecedor';
+import ClienteFornecedorCompl from '../models/ClienteFornecedorCompl';
 import Movimento from '../models/Movimento';
 
 class MovimentoController {
@@ -18,8 +19,13 @@ class MovimentoController {
       include: [
         {
           model: ClienteFornecedor,
-          as: 'clienteFornecedor',
+          as: 'cliente',
           attributes: ['codcfo', 'rua', 'numero', 'bairro', 'cidade'],
+        },
+        {
+          model: ClienteFornecedorCompl,
+          as: 'coordenadas',
+          attributes: ['latitude', 'longitude'],
         },
       ],
     });

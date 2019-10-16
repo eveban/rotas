@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import routes from './routes';
@@ -12,7 +13,7 @@ class App {
   }
 
   middlewares() {
-    this.server.use(cors({ origin: 'http://192.168.1.14:3000' }));
+    this.server.use(cors());
     this.server.use(express.json());
   }
 

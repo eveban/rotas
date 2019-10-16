@@ -36,10 +36,17 @@ class Movimento extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.ClienteFornecedor, {
-      foreignKey: 'codcfo',
-      as: 'clienteFornecedor',
-    });
+    this.belongsTo(
+      models.ClienteFornecedor,
+      {
+        foreignKey: 'codcfo',
+        as: 'cliente',
+      },
+      this.belongsTo(models.ClienteFornecedorCompl, {
+        foreignKey: 'codcfo',
+        as: 'coordenadas',
+      })
+    );
   }
 }
 
