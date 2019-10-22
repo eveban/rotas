@@ -17,10 +17,9 @@ module.exports = {
     //** */
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
-    "no-param-reassing": "off",
+    "no-param-reassign": "off",
     "camelcase": "off",
     // variáveis não usadas
     "no-unused-vars": ["error", {"argsIgnorePattern": "next"}],
-
   },
 };

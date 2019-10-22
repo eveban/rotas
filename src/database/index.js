@@ -4,9 +4,16 @@ import ClienteFornecedor from '../app/models/ClienteFornecedor';
 import ClienteFornecedorCompl from '../app/models/ClienteFornecedorCompl';
 import Movimento from '../app/models/Movimento';
 import Estoque from '../app/models/Estoque';
+import Usuario from '../app/models/Usuario';
 import databaseConfig from '../config/database';
 
-const models = [ClienteFornecedor, Movimento, ClienteFornecedorCompl, Estoque];
+const models = [
+  Usuario,
+  ClienteFornecedor,
+  Movimento,
+  ClienteFornecedorCompl,
+  Estoque,
+];
 
 class Database {
   constructor() {
