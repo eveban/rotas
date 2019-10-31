@@ -1,6 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
 import bcrypt from 'bcryptjs';
-import Tedious from 'tedious';
 
 class Usuario extends Model {
   static init(sequelize) {
@@ -16,7 +15,7 @@ class Usuario extends Model {
           type: Sequelize.STRING,
         },
         username: {
-          type: Tedious.TYPES.VarChar,
+          type: Sequelize.STRING,
         },
         senha: {
           type: Sequelize.VIRTUAL,
@@ -27,6 +26,9 @@ class Usuario extends Model {
         },
         email: {
           type: Sequelize.STRING,
+        },
+        masteruser: {
+          type: Sequelize.CHAR,
         },
       },
       {

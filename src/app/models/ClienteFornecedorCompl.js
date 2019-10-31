@@ -17,6 +17,9 @@ class ClienteFornecedorCompl extends Model {
           type: Sequelize.STRING(30),
           field: 'longitude',
         },
+        prioridade: {
+          type: Sequelize.INTEGER,
+        },
       },
       {
         tableName: 'FCFOCOMPL',

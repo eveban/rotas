@@ -44,7 +44,7 @@ class Movimento extends Model {
       },
       this.belongsTo(models.ClienteFornecedorCompl, {
         foreignKey: 'codcfo',
-        as: 'coordenadas',
+        as: 'entrega',
       })
     );
   }

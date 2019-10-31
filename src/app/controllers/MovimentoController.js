@@ -10,7 +10,7 @@ class MovimentoController {
       where: {
         romaneio,
         dataEmissao,
-        codTipoMovimento: '2.1.10',
+        codTipoMovimento: '2.1.15',
         status: {
           [Op.ne]: 'c',
         },
@@ -24,8 +24,8 @@ class MovimentoController {
         },
         {
           model: ClienteFornecedorCompl,
-          as: 'coordenadas',
-          attributes: ['latitude', 'longitude'],
+          as: 'entrega',
+          attributes: ['prioridade', 'latitude', 'longitude'],
         },
       ],
     });
