@@ -10,7 +10,7 @@ class MovimentoController {
       where: {
         romaneio,
         dataEmissao,
-        codTipoMovimento: '2.1.15',
+        codTipoMovimento: '2.1.10',
         status: {
           [Op.ne]: 'c',
         },
