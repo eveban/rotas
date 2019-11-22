@@ -5,7 +5,7 @@ import authConfig from '../../config/auth';
 
 class SessionController {
   async store(req, res) {
-    const { username, senha } = req.body;
+    const { username, password } = req.body;
     const usuario = await Usuario.findOne({
       tableHint: TableHints.NOLOCK,
       where: { username },
@@ -14,7 +14,7 @@ class SessionController {
     if (!usuario) {
       return res.status(400).json({ error: 'Usuário não encontrado' });
     }
-    if (!(await usuario.verificaSenha(senha))) {
+    if (!(await usuario.verificaSenha(password))) {
       return res.status(400).json({ error: 'Senha inválida' });
     }
     const { id, nome, email } = usuario;

@@ -15,7 +15,7 @@ class App {
   middlewares() {
     this.server.use(
       cors({
-        origin: false,
+        origin: true,
       })
     );
     this.server.use(express.json());
