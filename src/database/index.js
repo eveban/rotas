@@ -5,6 +5,7 @@ import ClienteFornecedorCompl from '../app/models/ClienteFornecedorCompl';
 import Movimento from '../app/models/Movimento';
 import Estoque from '../app/models/Estoque';
 import Usuario from '../app/models/Usuario';
+import Rota from '../app/models/Rota';
 import databaseConfig from '../config/database';
 
 const models = [
@@ -13,6 +14,7 @@ const models = [
   Movimento,
   ClienteFornecedorCompl,
   Estoque,
+  Rota,
 ];
 
 class Database {

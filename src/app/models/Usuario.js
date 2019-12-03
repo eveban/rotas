@@ -9,7 +9,6 @@ class Usuario extends Model {
           type: Sequelize.INTEGER,
           field: 'idcrmusuario',
           primaryKey: true,
-          autoIncrementIdentity: true,
         },
         nome: {
           type: Sequelize.STRING,

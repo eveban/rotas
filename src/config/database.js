@@ -10,4 +10,7 @@ module.exports = {
   define: {
     timestamps: false,
   },
+  options: {
+    tdsVersion: '7_3_B',
+  },
 };

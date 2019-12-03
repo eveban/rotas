@@ -7,6 +7,7 @@ import authMiddleware from './app/middlewares/auth';
 import MovimentoController from './app/controllers/MovimentoController';
 import EstoqueController from './app/controllers/EstoqueController';
 import ClienteFornecedorController from './app/controllers/ClienteFornecedorController';
+import RotaController from './app/controllers/RotaController';
 
 const routes = new Router();
 routes.get('/usuarios', UsuarioController.index);
@@ -21,5 +22,8 @@ routes.put('/usuarios', UsuarioController.update);
 routes.get('/estoque', EstoqueController.index);
 routes.get('/clientes', ClienteFornecedorController.index);
 routes.get('/movimentos', MovimentoController.index);
+
+routes.post('/rotas', RotaController.store);
+routes.get('/rotas', RotaController.index);
 
 export default routes;

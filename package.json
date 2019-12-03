@@ -22,7 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "react-router-dom": "^5.1.2",
     "sequelize": "^5.18.1",
-    "tedious": "^6.0.0",
+    "tedious": "^6.2.1",
     "yup": "^0.27.0"
   },
   "devDependencies": {
