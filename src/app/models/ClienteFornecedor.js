@@ -10,19 +10,19 @@ class ClienteFornecedor extends Model {
         },
         rua: {
           type: Sequelize.STRING,
-          field: 'RUAENTREGA',
+          field: 'RUA',
         },
         numero: {
           type: Sequelize.STRING,
-          field: 'NUMEROENTREGA',
+          field: 'NUMERO',
         },
         bairro: {
           type: Sequelize.STRING,
-          field: 'BAIRROENTREGA',
+          field: 'BAIRRO',
         },
         cidade: {
           type: Sequelize.STRING,
-          field: 'CIDADEENTREGA',
+          field: 'CIDADE',
         },
         ativo: {
           type: Sequelize.SMALLINT,

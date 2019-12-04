@@ -2,7 +2,7 @@ import Rota from '../models/Rota';
 
 class RotaController {
   async store(req, res) {
-    console.log(`Passei aqui ${req.param.codcfo}`);
+    console.log(`Passei aqui ${req.body.codcfo}`);
     const { codcfo } = await Rota.create({
       ...req.body,
     });
