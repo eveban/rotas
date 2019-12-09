@@ -5,6 +5,7 @@ import SessionController from './app/controllers/SessionController';
 import authMiddleware from './app/middlewares/auth';
 
 import MovimentoController from './app/controllers/MovimentoController';
+import PedidoController from './app/controllers/PedidoController';
 import EstoqueController from './app/controllers/EstoqueController';
 import ClienteFornecedorController from './app/controllers/ClienteFornecedorController';
 import RotaController from './app/controllers/RotaController';
@@ -22,6 +23,7 @@ routes.put('/usuarios', UsuarioController.update);
 routes.get('/estoque', EstoqueController.index);
 routes.get('/clientes', ClienteFornecedorController.index);
 routes.get('/movimentos', MovimentoController.index);
+routes.get('/pedidos', PedidoController.index);
 
 routes.post('/rotas', RotaController.store);
 routes.get('/rotas', RotaController.index);
