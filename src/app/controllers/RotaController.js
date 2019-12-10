@@ -1,59 +1,46 @@
-import Rota from '../models/Rota';
 import sequelize from 'sequelize';
+import Rota from '../models/Rota';
 
 class RotaController {
+  /* async store(req, res) {
+    const { codcfo } = await Rota.bulkCreate([...req.body]);
 
-	async store(req, res) {
-	  const { codcfo } = await Rota.bulkCreate([...req.body]);
-  
-	  return res.json({
-		codcfo,
-	  });
-	}
-	
+    return res.json({
+      codcfo,
+    });
+  } */
 
-	async index(req, res) {
-		const rota = await Rota.findAll();
-		return res.json(rota);
-	}
+  async index(req, res) {
+    const rota = await Rota.findAll();
+    return res.json(rota);
+  }
 
-	async storeBulk(req, res) {
-	  const { codcfo } = await Rota.bulkCreate([...req.body]);
-  
-	  return res.json({
-		codcfo,
-	  });
-	}
-	
-	async store(req, res) {
-		
-		//Aqui não sei como receber os params abaixo é um chute
-		let idRomaneio = req.query.idRomaneio;
-		let dateSelected = req.query.data;
+  async storeBulk(req, res) {
+    const { codcfo } = await Rota.bulkCreate([...req.body]);
 
-		console.log('>>>> Romaneio: ', idRomaneio);
-		console.log(">>>> Rotas body: ", req.body);
+    return res.json({
+      codcfo,
+    });
+  }
 
-		//antes do bulkInsert teria que deletar, estou achando que precisa ok
-		// nao sei sequelize.query se isto existe desta maneira, nao consigo testar
-		
-		let sqlExclui = "delete from ZROTACAR where romaneio = " + idRomaneio + " and data = " + dateSelected;
-		
-		sequelize.query(sqlExclui)
-			.catch(error => {
-				console.log("Rotas erro - Excluir : ", error.message);
-				res.status(412).json({ msg: error.message });
-			});
-			
-		//ai sim executa o bulk como vc descobriu, mas não sei se pelo front chega certo os dados ainda	
-		const { codcfo } = await Rota.bulkCreate([...req.body]);
-  
-	    return res.json({
-		  codcfo,
-	    });
-	 
-	 //Abaixo aqui era assim que fazia no meu backend com postgresql
-	 /*
+  async store(req, res) {
+    const { data, romaneio } = req.body[0];
+    const sqlExclui =
+      'DELETE FROM ZROTACAR WHERE ROMANEIO = :romaneio AND DATA = :data';
+
+    await Rota.sequelize.query(sqlExclui, {
+      replacements: { romaneio, data },
+      type: sequelize.QueryTypes.DELETE,
+    });
+
+    await Rota.bulkCreate([...req.body]);
+    const { codcfo } = [req.body];
+    return res.json({
+      codcfo,
+    });
+
+    // Abaixo aqui era assim que fazia no meu backend com postgresql
+    /*
 		let rotasArray = req.body;
 		let sqlInsert = "";
 
@@ -85,9 +72,7 @@ class RotaController {
 				});
 		}
 		*/
-
-	};
-
+  }
 }
 
 export default new RotaController();
