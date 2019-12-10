@@ -27,5 +27,7 @@ routes.get('/pedidos', PedidoController.index);
 
 routes.post('/rotas', RotaController.store);
 routes.get('/rotas', RotaController.index);
+routes.get('/rotas/:idRomaneio/:data', RotaController.storeBulk);
+
 
 export default routes;
