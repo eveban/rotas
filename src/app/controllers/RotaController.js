@@ -19,7 +19,7 @@ class RotaController {
 		return res.json(rota);
 	}
 
-	store(req, res) {
+	async store(req, res) {
 		let idRomaneio = req.query.idRomaneio;
 
 		console.log('>>>> Romaneio: ', idRomaneio);
