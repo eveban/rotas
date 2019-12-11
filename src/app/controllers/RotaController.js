@@ -25,7 +25,7 @@ class RotaController {
 
   async store(req, res) {
 	  
-	var arrayList =  JSON.parse(req.body.listRoutes);
+	var arrayList =  JSON.parse(JSON.stringify(req.body.listRoutes));
 	
 	console.log('ArrayList: ', arrayList);
 	
