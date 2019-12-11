@@ -24,6 +24,9 @@ class RotaController {
   }
 
   async store(req, res) {
+	  
+	console.log('>>>>>  req.body[0]: ', req.body[0]);
+	
     const { data, romaneio } = req.body[0];
     const sqlExclui =
       'DELETE FROM ZROTACAR WHERE ROMANEIO = :romaneio AND DATA = :data';
