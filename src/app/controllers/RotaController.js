@@ -25,6 +25,8 @@ class RotaController {
 
   async store(req, res) {
 	  
+	  
+	console.log('>>>>>  req.body: ', req.body);  
 	console.log('>>>>>  req.body[0]: ', req.body[0]);
 	
     const { data, romaneio } = req.body[0];
