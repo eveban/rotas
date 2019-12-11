@@ -25,7 +25,7 @@ class RotaController {
 
   async store(req, res) {
 	  
-	var arrayList =  JSON.parse(JSON.stringify(req.body.listRoutes));
+	var arrayList = JSON.parse(JSON.stringify(req.body.listRoutes));
 	
 	console.log('ArrayList: ', arrayList);
 	
@@ -39,7 +39,7 @@ class RotaController {
       type: sequelize.QueryTypes.DELETE,
     });
 
-	const list = Object.keys(JSON.stringify(req.body.listRoutes)).map((key) => [key, JSON.stringify(req.body.listRoutes)[key]]);
+	var list = [req.body.listRoutes];
 	
 	console.log('>>>>>>>> List: ', list);
 	
