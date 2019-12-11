@@ -39,7 +39,10 @@ class RotaController {
       type: sequelize.QueryTypes.DELETE,
     });
 
-    await Rota.bulkCreate([arrayList]);
+	var list = [];
+	list.push(arrayList);
+	
+    await Rota.bulkCreate([list]);
     const { codcfo } = [arrayList];
     return res.json({
       codcfo,
