@@ -39,7 +39,7 @@ class RotaController {
       type: sequelize.QueryTypes.DELETE,
     });
 
-	var list = [req.body.listRoutes];
+	var list = [arrayList];
 	
 	console.log('>>>>>>>> List: ', list);
 	
