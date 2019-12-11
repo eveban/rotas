@@ -27,8 +27,6 @@ class RotaController {
 	  
 	var arrayList = JSON.parse(JSON.stringify(req.body.listRoutes));
 	
-	console.log('ArrayList: ', arrayList);
-	
     const { data, romaneio } = arrayList[0];
 	
     const sqlExclui =
