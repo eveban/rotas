@@ -39,7 +39,9 @@ class RotaController {
       type: sequelize.QueryTypes.DELETE,
     });
 
-	const list = Object.keys(arrayList).map((key) => [key, arrayList[key]]);
+	const list = Object.keys(JSON.stringify(req.body.listRoutes)).map((key) => [key, JSON.stringify(req.body.listRoutes)[key]]);
+	
+	console.log('>>>>>>>> List: ', list);
 	
     await Rota.bulkCreate([list]);
     const { codcfo } = [arrayList];
