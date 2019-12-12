@@ -37,5 +37,12 @@ class ClienteFornecedor extends Model {
     );
     return this;
   }
+
+  static associate(models) {
+    this.belongsTo(models.ClienteFornecedorCompl, {
+      foreignKey: 'codcfo',
+      as: 'entrega',
+    });
+  }
 }
 export default ClienteFornecedor;

@@ -1,5 +1,6 @@
 import { Op } from 'sequelize';
 import ClienteFornecedor from '../models/ClienteFornecedor';
+import ClienteFornecedorCompl from '../models/ClienteFornecedorCompl';
 
 class ClienteFornecedorController {
   async index(req, res) {
@@ -14,6 +15,13 @@ class ClienteFornecedorController {
         ativo: 1,
       },
       attributes: ['codcfo', 'rua', 'numero', 'bairro', 'cidade'],
+      include: [
+        {
+          model: ClienteFornecedorCompl,
+          as: 'entrega',
+          attributes: ['latitude', 'longitude'],
+        },
+      ],
     });
     return res.json(clientes);
   }

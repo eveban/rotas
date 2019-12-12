@@ -24,11 +24,10 @@ class RotaController {
   }
 
   async store(req, res) {
-	  
-	var arrayList = JSON.parse(JSON.stringify(req.body.listRoutes));
-	
+    const arrayList = JSON.parse(JSON.stringify(req.body.listRoutes));
+
     const { data, romaneio } = arrayList[0];
-	
+
     const sqlExclui =
       'DELETE FROM ZROTACAR WHERE ROMANEIO = :romaneio AND DATA = :data';
 
