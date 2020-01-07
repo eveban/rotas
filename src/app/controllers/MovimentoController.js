@@ -15,7 +15,7 @@ class MovimentoController {
           [Op.ne]: 'c',
         },
       },
-      attributes: ['romaneio', 'dataEmissao'],
+      attributes: ['idmov', 'romaneio', 'dataEmissao'],
       include: [
         {
           model: ClienteFornecedor,
