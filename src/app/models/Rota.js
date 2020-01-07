@@ -22,6 +22,10 @@ class Rota extends Model {
           type: Sequelize.STRING,
           field: 'ROMANEIO',
         },
+        idmov: {
+          type: Sequelize.STRING,
+          field: 'IDMOV',
+        },
       },
       {
         tableName: 'ZROTACAR',

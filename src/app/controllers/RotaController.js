@@ -35,7 +35,6 @@ class RotaController {
       replacements: { romaneio, data },
       type: sequelize.QueryTypes.DELETE,
     });
-
     await Rota.bulkCreate(arrayList);
     const { codcfo } = [arrayList];
     return res.json({
