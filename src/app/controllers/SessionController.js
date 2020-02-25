@@ -9,6 +9,7 @@ class SessionController {
     const usuario = await Usuario.findOne({
       tableHint: TableHints.NOLOCK,
       where: { username },
+      limit: 0,
     });
 
     if (!usuario) {
