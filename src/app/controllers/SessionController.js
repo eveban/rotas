@@ -7,7 +7,7 @@ class SessionController {
   async store(req, res) {
     const { username, password } = req.body;
     const usuario = await Usuario.findOne({
-      tableHint: TableHints.NOLOCK,
+      tableHint: 'NOLOCK',
       where: { username },
       limit: 0,
     });
