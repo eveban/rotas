@@ -12,6 +12,7 @@ class App {
     this.routes();
   }
 
+  /** Alteração de Cors */
   middlewares() {
     this.server.use(cors());
     this.server.use(express.json());
