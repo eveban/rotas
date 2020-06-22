@@ -20,6 +20,11 @@ class ClienteFornecedorController {
           model: ClienteFornecedorCompl,
           as: 'entrega',
           attributes: ['latitude', 'longitude'],
+          where: {
+            latitude: {
+              [Op.ne]: null,
+            },
+          },
         },
       ],
     });
